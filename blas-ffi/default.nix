@@ -1,4 +1,4 @@
-{ mkDerivation, base, fetchdarcs, openblas, netlib-ffi, stdenv }:
+{ mkDerivation, base, fetchdarcs, openblasCompat, netlib-ffi, stdenv }:
 mkDerivation {
   pname = "blas-ffi";
   version = "0.1";
@@ -6,7 +6,7 @@ mkDerivation {
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [ base netlib-ffi ];
-  libraryPkgconfigDepends = [ openblas ];
+  libraryPkgconfigDepends = [ openblasCompat ];
   homepage = "http://hub.darcs.net/thielema/blas-ffi/";
   description = "Auto-generated interface to Fortran BLAS";
   license = stdenv.lib.licenses.bsd3;

@@ -3,10 +3,9 @@
 let
 
 my-blas-ffi = pkgs.haskellPackages.callPackage ../blas-ffi/default.nix {};
-my-lapack   = pkgs.haskellPackages.callPackage ./default.nix { blas-ffi = my-blas-ffi; };
+my-lapack   = pkgs.haskellPackages.callPackage ./default.nix { blas-ffi = my-blas-ffi; gfortran = pkgs.gfortran; };
 
 haskellDeps = ps: with ps; [
-  # my-blas-ffi
   my-lapack
 ];
 
